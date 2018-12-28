@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+<!--
+MMMMMMMMMMMMMhailsatanMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMds+:--------:+sdNMMMMMMMMMMM
+MMMMMMMMms:-+sdNMMMMMMMMNdy+--omMMMMMMMM
+MMMMMMh:` /mMMMMMMMMMMMMMMMMm+ `-yMMMMMM
+MMMMd--hN``--sNMMMMMMMMMMNy:..`md:.hMMMM
+MMM+`yMMMy hd+./hMMMMMMh/.+dd sMMMh`/MMM
+MM:.mMMMMM:.NMMh/.+dd+./hMMM--MMMMMm--NM
+M+`mMMMMMMN`+MMMMm-  .dMMMMo mMMMMMMN.:M
+d yMMMMMMMMy dNy:.omNs--sNm oMMMMMMMMh h
+/`MMMMMMMMMM.`.+dMMMMMMm+.``NMMMMMMMMM-:
+.:MMMMMMMd+./`oMMMMMMMMMMs /.+dMMMMMMM/`
+.:MMMMmo.:yNMs dMMMMMMMMm`oMNy:.omMMMM/`
+/`MNy:.omMMMMM--MMMMMMMM:.MMMMMNs--sNM.:
+d -` :++++++++: /++++++/ :++++++++:  : h
+M+ yddddddddddd+ yddddy /dddddddddddy`/M
+MM/.mMMMMMMMMMMM.-MMMM/.NMMMMMMMMMMm.:NM
+MMMo`sMMMMMMMMMMd sMMy hMMMMMMMMMMy`+MMM
+MMMMd--hMMMMMMMMM+`mN`/MMMMMMMMMh--hMMMM
+MMMMMMh:.omMMMMMMN.:/`NMMMMMMms.:hMMMMMM
+MMMMMMMMNs:./shmMMh  yMMNds/.:smMMMMMMMM
+MMMMMMMMMMMMdy+/---``---:+sdMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Throned in Blood - Cody Winchester - codywinchester.com</title>
+  <link rel="shortcut icon" href="./assets/media/favicon.png" />
+  <link rel="canonical" href="https://codywinchester.com/throned-in-blood/" />
+  <meta name="description" content="🐐🎸🤟">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+<style>
+  html, body { margin:0; padding:0; background:black; overflow:hidden; }
+  #a {display:none;}
+  div {text-align:center; margin-top:30px;}
+</style>
+
+  
+</head>
+<body>
+  
+<div>
+  <canvas id="c" width="500" height="500"></canvas>
+  <audio id="a">
+    <source src="./tib.mp3" type="audio/mp3">
+  </audio>
+</div>
+
+<script>
+(function() {
+  var ctx = (document.getElementById('c')).getContext('2d');
+  var audio = document.getElementById('a');
+
+  // http://www.pixelstech.net/article/1335200166-How-to-draw-pentagram-in-HTML5-canvas
+  function pentagram(ctx, x, y, radius, rotate, linewidth, linecolor, circle) {
+    ctx.lineWidth = linewidth;
+    ctx.strokeStyle = linecolor;
+    ctx.beginPath();
+    for ( var i = 0; i <= 4 * Math.PI; i += ( 4 * Math.PI ) / 5 ) {
+      ctx.lineTo( x + radius * Math.cos(i + rotate), y + radius * Math.sin(i + rotate));
+    }
+    if ( circle ) {
+      ctx.moveTo( x + radius, y );
+      ctx.arc(x, y, radius, 0, Math.PI*2, false);
+    }
+    ctx.stroke();
+  }
+
+  function throned_in_blood() {
+    pentagram (ctx, 200, 200, 170, Math.PI/2, 7, 'red', true);
+    audio.play();
+  }
+
+  var keys = '';
+  var _666 = 'hailsatan';
+
+  document.addEventListener('keydown', function(e) {
+    if (keys.length > 50) {
+      keys = '';
+    }
+    keys += e.key;
+    if (keys.indexOf(_666) > -1) {
+      throned_in_blood();
+    }
+  });
+})();
+</script>
+
+</body>
+</html>
